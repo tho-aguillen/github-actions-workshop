@@ -10,7 +10,7 @@ setup:
 
 # Run test workflow
 test:
-    act --workflows '.github/workflows/semantic_release.yml'
+    act --workflows '.github/workflows/test.yml'
 
 # Dispatch event
 run_event event="push":
