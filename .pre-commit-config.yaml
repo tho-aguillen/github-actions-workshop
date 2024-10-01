@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+        exclude: docs/CHANGELOG.md
+      - id: mixed-line-ending
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.29.0
+    hooks:
+      - id: commitizen
+
+  - repo: https://github.com/rkotze/git-mob
+    rev: v3.2.3
+    hooks:
+      - id: add-coauthors
+        stages: ["prepare-commit-msg"]
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
