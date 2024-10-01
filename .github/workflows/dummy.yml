@@ -3,12 +3,10 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
   workflow_call:
-  push:
-    branches:
-      - main
 
 jobs:
-  Explore-GitHub-Actions:
+  local:
+    name: 🏠 Local workflow
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -22,3 +20,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+#  reusable:
+#    name: ☎️ Remote workflow
+#    needs: [local]
+#    uses: tho-aguillen/github-actions-reusable-workflow/.github/workflows/reusable.yml@main
